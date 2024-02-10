@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AMPDid</title>
+
+    <!-- 
+      Cardano preprod: https://development.d1nka4q7xxcu3u.amplifyapp.com/ampd-id.js
+      Cardano mainnet: https://main.dxqw1evy7de7x.amplifyapp.com/ampd-id.js
+    -->
+    <script
+      type="module"
+      src="https://development.d1nka4q7xxcu3u.amplifyapp.com/ampd-id.js"
+    ></script>
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      background-color: #313030;
+      overflow-y: scroll;
+      padding: 32px;
+    "
+  >
+    <ampd-id open="true"></ampd-id>
+    <script>
+      // ✨ This is the initial event for when the component is loaded
+      document.addEventListener('ampd-id-initialize-success', () => {
+        console.log('ampd-id-initialize-success');
+
+        // ⚡️ These are all the events that can be dispatched by the AMPDid component
+        [
+          'wallet-authorization-success',
+          'wallet-authorization-error',
+          'signin-success',
+          'signin-error',
+          'wallet-connection-success',
+          'wallet-connection-error',
+          'wallet-disconnect-success',
+          'wallet-disconnect-error',
+          'profile-picture-updated',
+          'account-handle-updated',
+          'sign-out',
+        ].forEach((eventType) => {
+          // 👂 Here we setup event listeners for the events
+          window.ampdId.events.addEventListener(eventType, (data) => {
+            console.log(eventType);
+            console.log(data);
+          });
+        });
+      });
+
+      // ⚠️ This is if the component had an error when initialized
+      document.addEventListener('ampd-id-initialize-error', (data) => {
+        console.log('ampd-id-initialize-error');
+        console.log(data);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "ampd-id-example",
+  "version": "0.4.2",
+  "description": "A simple example of how to use AMPDid.",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server -p 8080 -o"
+  }
+}
