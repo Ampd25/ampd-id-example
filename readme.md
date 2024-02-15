@@ -10,6 +10,8 @@
 ## 🛜 Setting Cardano network
 - Open ./public/index.html on row 14 you can change between preprod and mainnet.
 - preprod: https://development.d1nka4q7xxcu3u.amplifyapp.com/ampd-id.js
+- preprod Maestro: https://maestro.d12t2ilsqjnrm7.amplifyapp.com/ampd-id.js
+
 - mainnet: https://main.dxqw1evy7de7x.amplifyapp.com/ampd-id.js
 
 ## 🧠 ampdId object
